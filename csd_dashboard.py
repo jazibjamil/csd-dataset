@@ -22,7 +22,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
 
-# Set page configuration FIRST - before any other st command
+# Set page configuration FIRST
 st.set_page_config(
     page_title="🥤 Saudi CSD Market Intelligence",
     page_icon="🥤",
@@ -30,40 +30,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Comprehensive CSS to hide GitHub, Edit, and Deploy buttons
+# More targeted CSS - only hide the toolbar, not the header
 st.markdown("""
     <style>
-    /* Hide the entire header toolbar */
-    header[data-testid="stHeader"] {
+    /* Hide the toolbar with GitHub/Edit buttons */
+    [data-testid="stToolbar"] {
         display: none;
-    }
-    
-    /* Hide GitHub icon */
-    #GithubIcon {
-        visibility: hidden;
     }
     
     /* Hide deploy button */
     .stDeployButton {
-        display: none;
-    }
-    
-    /* Hide the main menu (hamburger) */
-    #MainMenu {
-        visibility: hidden;
-    }
-    
-    /* Hide Streamlit footer */
-    footer {
-        visibility: hidden;
-    }
-    
-    /* Alternative selectors for toolbar items */
-    button[kind="header"] {
-        display: none;
-    }
-    
-    [data-testid="stToolbar"] {
         display: none;
     }
     
@@ -89,6 +65,7 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 class CSDDashboard:
     """Main dashboard class for CSD market intelligence"""
