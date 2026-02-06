@@ -30,20 +30,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# More targeted CSS - only hide the toolbar, not the header
+# Only your custom styling - NO hiding of Streamlit elements
 st.markdown("""
-    <style>
-    /* Hide the toolbar with GitHub/Edit buttons */
-    [data-testid="stToolbar"] {
-        display: none;
-    }
-    
-    /* Hide deploy button */
-    .stDeployButton {
-        display: none;
-    }
-    
-    /* Your custom styling */
+<style>
     .main-header {
         font-size: 2.5rem;
         color: #2E86AB;
@@ -63,10 +52,8 @@ st.markdown("""
         border-radius: 5px;
         margin: 1rem 0;
     }
-    </style>
+</style>
 """, unsafe_allow_html=True)
-
-
 class CSDDashboard:
     """Main dashboard class for CSD market intelligence"""
     
