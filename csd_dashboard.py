@@ -30,14 +30,19 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Hide GitHub and toolbar buttons
+# Target the exact toolbar button container
 st.markdown("""
 <style>
-    /* Hide the toolbar in the top-right corner */
-    section[data-testid="stToolbar"] {
+    /* Hide the toolbar action buttons */
+    .stToolbarActionButton {
         display: none !important;
     }
     
+    div[data-testid="stToolbarActionButton"] {
+        display: none !important;
+    }
+    
+    /* Your custom styling */
     .main-header {
         font-size: 2.5rem;
         color: #2E86AB;
