@@ -30,17 +30,40 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Now add all your custom CSS together
+# Comprehensive CSS to hide GitHub, Edit, and Deploy buttons
 st.markdown("""
     <style>
-    /* Hide GitHub and deploy buttons */
+    /* Hide the entire header toolbar */
+    header[data-testid="stHeader"] {
+        display: none;
+    }
+    
+    /* Hide GitHub icon */
     #GithubIcon {
         visibility: hidden;
     }
+    
+    /* Hide deploy button */
     .stDeployButton {
         display: none;
     }
-    header[data-testid="stHeader"] {
+    
+    /* Hide the main menu (hamburger) */
+    #MainMenu {
+        visibility: hidden;
+    }
+    
+    /* Hide Streamlit footer */
+    footer {
+        visibility: hidden;
+    }
+    
+    /* Alternative selectors for toolbar items */
+    button[kind="header"] {
+        display: none;
+    }
+    
+    [data-testid="stToolbar"] {
         display: none;
     }
     
