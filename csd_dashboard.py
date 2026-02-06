@@ -20,6 +20,18 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
+import streamlit as st
+
+# Custom CSS to hide the GitHub icon
+hide_github_icon = """
+<style>
+.css-1jc7ptx.e1ewe1squ3, .css-1jc7ptx.e1ewe1squ3.e1ewe1sq0, .css-1jc7ptx.e1ewe1squ3.e1ewe1sq1, .css-1jc7ptx.e1ewe1squ3.e1ewe1sq5, .css-1jc7ptx.e1ewe1squ3.e1ewe1sq4 {
+    display: none !important;
+}
+</style>
+"""
+
+st.markdown(hide_github_icon, unsafe_allow_html=True)
 
 # Set page configuration
 st.set_page_config(
