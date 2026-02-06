@@ -22,18 +22,7 @@ import warnings
 warnings.filterwarnings('ignore')
 import streamlit as st
 
-# Custom CSS to hide the GitHub icon
-st.markdown("""
-    <style>
-    #GithubIcon {
-        visibility: hidden;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# st.markdown(hide_github_icon, unsafe_allow_html=True)
-
-# Set page configuration
+# Set page configuration FIRST - before any other st command
 st.set_page_config(
     page_title="🥤 Saudi CSD Market Intelligence",
     page_icon="🥤",
@@ -41,9 +30,21 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling
+# Now add all your custom CSS together
 st.markdown("""
-<style>
+    <style>
+    /* Hide GitHub and deploy buttons */
+    #GithubIcon {
+        visibility: hidden;
+    }
+    .stDeployButton {
+        display: none;
+    }
+    header[data-testid="stHeader"] {
+        display: none;
+    }
+    
+    /* Your custom styling */
     .main-header {
         font-size: 2.5rem;
         color: #2E86AB;
@@ -63,7 +64,7 @@ st.markdown("""
         border-radius: 5px;
         margin: 1rem 0;
     }
-</style>
+    </style>
 """, unsafe_allow_html=True)
 
 class CSDDashboard:
