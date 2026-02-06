@@ -46,7 +46,6 @@ ehthumbs.db
 Thumbs.db
 
 # Data files
-*.xlsx
 *.xls
 *.csv
 *.json
